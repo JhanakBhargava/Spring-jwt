@@ -47,7 +47,7 @@ public class SecurityController {
     private UserService userService;
 
 
-    @CrossOrigin
+
     @PreAuthorize("hasRole('ROLE_SUPERADMIN')")
     @GetMapping({"/superadmin"})
     public String user() {
@@ -55,7 +55,7 @@ public class SecurityController {
     }
 
 
-    @CrossOrigin
+
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')")
     @GetMapping({"/admin"})
     public String admin() {
